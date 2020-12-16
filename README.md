@@ -24,3 +24,27 @@ Things you may want to cover:
 * ...
 _____________________________________________________________________________________________
 adding gem 'devise'
+
+bundle 
+
+rails g devise:install
+
+adding config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } to "development.rb"
+
+adding 
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+to application.html.rb
+
+setting 'page#home' as default page
+
+rails g devise:views
+
+rails g devise User
+
+rails db:migrate
+
+adding https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css to application.html.rb
+
+
+added some frontend
