@@ -1,0 +1,18 @@
+<div class="page">
+<% if current_user %>
+    <% @masters = User.all  %>
+     <% @masters.each do |master| %>
+        <%if master.role == "master" %>
+       <%= link_to  "http://localhost:3000/users/#{master.id}" do  %>
+             <%#= master.email %>
+             <p>
+             <%= master.first_name %>
+             <%= master.last_name %>  
+             </p>
+       <%end%>
+        <% end %>
+    <% end %>
+<% else %>
+<p> please log in</p>
+<%end%> <%#"http://localhost:3000/users/#{master.id}"%>
+</div>

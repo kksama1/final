@@ -52,3 +52,9 @@ added some frontend
 
  rails g migration add_role_to_users role:integer
 
+ rails g migration addDetailsToUser first_name:string last_name:string username:string about:string work_exp:string phone_numb:integer
+
+
+gem 'bootstrap'
+gem 'bootstrap_form'
+

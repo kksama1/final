@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -15,9 +15,11 @@
 <body>
 
     <%= render 'shared/navbar'%>
+    <div class="inner_content">
    <%# <p class="notice"><%= notice %></p>
    <%# <p class="alert"><%= alert %></p>
     <%= yield %>
+    </div>
 </body>
 
 </html>
