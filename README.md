@@ -58,3 +58,9 @@ added some frontend
 gem 'bootstrap'
 gem 'bootstrap_form'
 
+gem 'image_processing', '~> 1.2'
+
+rails active_storage:install
+
+added avatars and set default one
+
