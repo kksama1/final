@@ -64,3 +64,17 @@ rails active_storage:install
 
 added avatars and set default one
 
+rails g model Comment title:string  body:text leaved_user:references belongs_user:references
+
+#comment.rb
+  belongs_to :leaved_user, class_name: 'User'
+  belongs_to :belongs_user, class_name: 'User'
+
+#usre.rb
+  has_many :leaved_user_comments, class_name: 'Comment', foreign_key: :leaved_user_id
+  has_many :belongs_user_comments, class_name: 'Comment', foreign_key: :belongs_user_id
+
+rails g controller comments create
+
+
+added some styling to master list page

@@ -1,19 +1,36 @@
 <div class="page">
-<% if current_user %>
+    <% if current_user %>
     <% @masters = User.all  %>
-     <% @masters.each do |master| %>
-        <%if master.role == "master" %>
-       <%= link_to  "http://localhost:3000/users/#{master.id}" do  %>
-             <%#= master.email %>
-             <p>
-             <%= image_tag  master.avatar_thumbnail %>
-             <%= master.first_name %>
-             <%= master.last_name %>  
-             </p>
-       <%end%>
-        <% end %>
+    <% @masters.each do |master| %>
+    <%if master.role == "master" %>
+    <%= link_to  "http://localhost:3000/users/#{master.id}", :class => "to-prof" do  %>
+    <%#= master.email %>
+        <div class = "master-info div-table">
+            <div class = "div-table-row">
+                <div class ="div-table-col col1">
+                    <%= image_tag  master.avatar_thumbnail, size: "350x350" %></div>
+                <div class = "div-table-col col2" >
+                    <h5><%= master.first_name %>
+                    <%= master.last_name %> </h5> <br />
+                    <%# "about" section not a link %>
+                    <%if master.about != nil%>
+                    About: <%= master.about %><br />
+                    <%end%>
+                    <%if master.phone_numb%>
+                    Phone number: <%= master.phone_numb %> <br />
+                    <%end%>
+                    <%if master.work_exp!= nil%>
+                    Work sinse: <%=master.work_exp%>
+                    <%end%>
+                </div>
+            </div>
+        </div>
+    <% end %>    
+
+    <%# end %> <%# if  if u want to make "about" section to links%>
     <% end %>
-<% else %>
-<p> please log in</p>
-<%end%> <%#"http://localhost:3000/users/#{master.id}"%>
+    <% end %>
+    <% else %>
+    <p> please log in</p>
+    <%end%> <%#"http://localhost:3000/users/#{master.id}"%>
 </div>

@@ -1,2 +1,34 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+ <% @master = User.find_by(id: request.url.split('/').last.to_i) %>
+ <div class="master-info">
+     <div><%= image_tag  @master.avatar_thumbnail, size: "350x350"%></div>
+     <div>
+         <%= @master.first_name %>
+         <%= @master.last_name %> <br />
+         <%if @master.work_exp!= nil%>
+           Work sinse :<%=@master.work_exp%><br />
+         <%end%>
+         <%if @master.about != nil%>
+         About:<%= @master.about %><br />
+         <%end%>
+     </div>
+     <%#= render 'comments/form' %>
+ </div>
+
+ <%#= form_with url: 'comments#create',method: :post, local: true do |f|%>
+
+<%# <%= form_with model: [@master, @comment] do |f|%>
+<%# <%= f.label :title, 'Title'%><br />
+<%# <%= f.text_field :title%><br />
+<%# <%= f.label :body, 'Body'%><br />
+<%# <%= f.text_area :body%><br />
+<%# <%= f.submit 'Post your comment'%>
+
+<%# <%@comments.each do |comm|%>
+<%#    <%= comm.created_at.strftime("%I:%M %p")%>
+<%#    <%= comm.leaved_user.email%>
+<%#    <%= comm.body%>
+<%#    <%= @comment.current_user.lastnaem%><%# <%= @comment.current_user.first_name%>
+<%# <%end%> 
+ 
+
+ <%#<% end %>

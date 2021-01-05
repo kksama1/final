@@ -4,5 +4,8 @@ class UsersController < ApplicationController
     if @user.role != "master"
       redirect_to page_show_master_path
     end
+
+    #@comment = Comment.new
+  #  @comments = @master.comments
   end
 end

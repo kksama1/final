@@ -21,11 +21,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.password_field :password,placeholder: "Here you can change your password", autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
+    <%= f.password_field :password,placeholder: "Here you can change your password. #{@minimum_password_length} characters minimum", autocomplete: "new-password" %>
+  <%#  <% if @minimum_password_length %>
       
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <%#    <em><%= @minimum_password_length %><%# characters minimum</em>
+  <%#   <% end %>
   </div>
 
 
@@ -41,6 +41,15 @@
       <%#= f.label :username %>
     <%#  <%= f.text_field :username, autocomplete: "username" %>
   <%#  </div> %>
+    <% if current_user.role == 'master'%>
+    <div class="field">
+      <%= f.text_area :about %>
+    </div>
+    <div class="field">
+      <%= f.number_field :work_exp %>
+    </div>
+    <% end %>
+
 
     <div class="field">
       <%#= f.label :last_name %>

@@ -1,6 +1,8 @@
 <% if current_user %>
-<h1><%= current_user.email %></h1>
+<h1>Welcome, <%= current_user.last_name %> <%= current_user.first_name %>!</h1>
 <% else %>
-<h1> anonim </h1>
+<h1>Welcome, Anonim! </h1>
 <% end %>
-<p>Find me in app/views/page/home.html.erb</p>
+<h4><p>Our website created for convenient plumbers search!<br />
+Or, if you a plumber, you can set up your own profile! And clients will give you job!<br />
+We promise everyone will be happy whoever you are! </p></h4>
