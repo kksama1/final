@@ -10,9 +10,37 @@
          <%if @master.about != nil%>
          About:<%= @master.about %><br />
          <%end%>
+
+
      </div>
      <%#= render 'comments/form' %>
+
  </div>
+
+
+         
+
+     <%= form_with model: [@user, @comment] do |f| %>
+      <%= f.text_field :body %><br />
+      <%= f.submit "feedback" %>
+     <% end %>
+
+
+<div id="show-comment">
+ <% @comments.each do |comment| %>
+<%#>  <%= comment.leaved_user.first_name %>
+<%#>  <%= comment.leaved_user.last_name %>
+<%#>  <%= comment.body %>
+<%= render 'comments/comment', comment: comment %>
+
+
+ <% end %>
+</div>
+
+
+
+
+
 
  <%#= form_with url: 'comments#create',method: :post, local: true do |f|%>
 

@@ -19,6 +19,9 @@
             </li>
             <% else %>
             <li class="nav-item">
+                <%= link_to  "Our masters", page_show_master_path,class:'nav-link' %>
+            </li>
+            <li class="nav-item">
             <%= link_to  "Sign in", new_user_session_path, class:'nav-link' %>
             </li>
             <li class="nav-item">

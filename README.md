@@ -50,6 +50,9 @@ adding https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css 
 added some frontend
 
 
+
+
+
  rails g migration add_role_to_users role:integer
 
  rails g migration addDetailsToUser first_name:string last_name:string username:string about:string work_exp:string phone_numb:integer
@@ -78,3 +81,11 @@ rails g controller comments create
 
 
 added some styling to master list page
+
+rails g migration add_user_to_comments user:references
+
+
+
+added jquery 
+
+edited config/webpack/environment.js
