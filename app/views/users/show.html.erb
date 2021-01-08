@@ -1,41 +1,62 @@
  <% @master = User.find_by(id: request.url.split('/').last.to_i) %>
- <div class="master-info">
-     <div><%= image_tag  @master.avatar_thumbnail, size: "350x350"%></div>
-     <div>
-         <%= @master.first_name %>
-         <%= @master.last_name %> <br />
-         <%if @master.work_exp!= nil%>
-           Work sinse :<%=@master.work_exp%><br />
-         <%end%>
+ <div id="profile">
+ <div>
+     <div class="profile-part"><%= image_tag  @master.avatar_thumbnail, size: "350x350"%></div>
+     <div id="profile-info" class="profile-part">
+         <h4><%= @master.first_name %>
+         <%= @master.last_name %></h4> <br />
+         
+        
          <%if @master.about != nil%>
-         About:<%= @master.about %><br />
+         <%=t "aboutText", about: @master.about %><br />
          <%end%>
+          <%= t "email" %>: <%= @master.email%><br />
+          <%if @master.phone_numb%>
+          <%= t "pNum"%>: <%= @master.phone_numb %> <br />
+          <%end%>
+          <%if @master.work_exp!= nil%>
+           <%= t "workExp", exp: @master.work_exp %><br />
+         <%end%>
+         
+         
 
 
      </div>
      <%#= render 'comments/form' %>
 
  </div>
-
+</div>
 
          
-
+<% if current_user && current_user.role == "customer" %>
      <%= form_with model: [@user, @comment] do |f| %>
-      <%= f.text_field :body %><br />
-      <%= f.submit "feedback" %>
-     <% end %>
+     <%= f.label t "feedback" %> <br />
+      <%= f.text_area :body , class: "form-control text-area"%><br />
+      <%= f.submit t("postFeedback"), class: "btn btn-secondary" %>
+     <% end %><br />
+<% else %>
+<%= t("signinPls_html") %>
+<% end %>
 
 
-<div id="show-comment">
- <% @comments.each do |comment| %>
+<%#><%if @master.comments.count != 0%>
+<div id="comment-block">
+  <p><%= t "reviews"%></p>
+  <div id="show-comment">
+
+    <% @comments.each do |comment| %>
 <%#>  <%= comment.leaved_user.first_name %>
 <%#>  <%= comment.leaved_user.last_name %>
 <%#>  <%= comment.body %>
-<%= render 'comments/comment', comment: comment %>
+     <%= render 'comments/comment', comment: comment %>
 
 
- <% end %>
+     <% end %>
+  </div>
 </div>
+<%#><%else%>
+<%#><h3>There is no comments yeat</h3>
+<%#><%end%>
 
 
 

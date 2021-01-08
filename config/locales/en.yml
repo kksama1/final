@@ -1,33 +1,31 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  email: "Email"
+  pNum: "Phone number"
+  commCount: "This master has %{commC} reviews from our customers."
+  1comm: "This master has %{commC} review from our customers."
+  ends1comm: "This master has %{commC} reviews from our customers."
+  workExp: "Work sinse: %{exp}"
+  aboutText: "About: %{about}"
+  feedback: "Input you review here:"
+  postFeedback: "Post"
+  reviews: "Reviews section"
+  signinPls_html: "<p>To leave review you neet to sign in or sign up. Only customers can leave their review.</p>"
+
+  shared:
+    navbar:
+      homepage: "Homepage"
+      OurMasters: "Our masters"
+      EditProfile: "Edit profile"
+      Signin: "Sign in"
+      Signout: "Sign out"
+      Signup: "Sing up"
+
+  page:
+    home:
+      Welcome: "Welcome"
+      WelcomeA: "Welcome, Anonim!!"
+      description_html: "Our website created for convenient plumbers search!<br />
+      Or, if you a plumber, you can set up your own profile! And clients will give you job!<br />
+      We promise everyone will be happy whoever you are! "
+      TotalU_html: "In total we have %{overall} users.<br />
+      %{ccount} of them are clients and %{mcount} are masters."

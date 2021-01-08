@@ -1,0 +1,14 @@
+#comment-block {
+    display: table;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    border: 2px solid black;
+    text-align: center;
+    width: 50%;
+}
+
+#show-comment {
+    margin: 2px;
+    border-top: solid black 2px;
+    text-align: left;
+}

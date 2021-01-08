@@ -89,3 +89,13 @@ rails g migration add_user_to_comments user:references
 added jquery 
 
 edited config/webpack/environment.js
+
+#config/application.rb
+    config.i18n.available_locales = [:en, :ru]
+    config.i18n.default_locale = :en
+
+gem 'rails-i18n'
+
+added translations 
+
+devise have some issues but i don't know to fix it caus it have several translations but i can't understend where to find translation file.. 

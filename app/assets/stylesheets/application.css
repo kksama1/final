@@ -19,8 +19,7 @@
     margin-right: 15px;
     margin-bottom: 10px;
 }
-#navbarNav{
-}
+
 
 .master-info {
    /* width:550px;  /* or whatever width you want. */
@@ -59,7 +58,6 @@
     display: table-cell;
     vertical-align: top;
     /*float: left; */
-    height: 100%;
 
     
 }
@@ -83,4 +81,18 @@
 }
 .to-prof:hover {
     text-decoration: none;
+}
+
+#profile {
+    display: table;
+    margin-bottom: 15px;
+}
+
+.profile-part {
+    display: table-cell;
+    vertical-align: top;
+    padding: 3px;
+}
+.text-area {
+    width: 50%;
 }
