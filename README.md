@@ -31,7 +31,7 @@ rails g devise:install
 
 adding config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } to "development.rb"
 
-adding 
+adding //actually deleted it cause it's looks useless
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 to application.html.rb
@@ -98,4 +98,4 @@ gem 'rails-i18n'
 
 added translations 
 
-devise have some issues but i don't know to fix it caus it have several translations but i can't understend where to find translation file.. 
+devise have some issues but i don't know to fix it cause it have several translations but i can't understend where to find translation file.. 
