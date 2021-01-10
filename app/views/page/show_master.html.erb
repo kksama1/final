@@ -1,27 +1,28 @@
 <div class="page">
-    <%# if current_user %>
+   
     <% @masters = User.all  %>
     <% @masters.each do |master| %>
     <%if master.role == "master" %>
     <%= link_to  "http://localhost:3000/#{I18n.locale}/users/#{master.id}", :class => "to-prof" do  %>
-    <%#= master.email %>
+  
         <div class = "master-info div-table">
             <div class = "div-table-row">
                 <div class ="div-table-col col1">
-                    <%= image_tag  master.avatar_thumbnail, size: "350x350" %></div>
+                    <%= image_tag  master.avatar_thumbnail, size: "350x350" %>
+                </div>
                 <div class = "div-table-col col2" >
                     <h5><%= master.first_name %>
                     <%= master.last_name %> </h5> <br />
-                    <%# "about" section not a link %>
+                   
                     <%if master.about != nil%>
-                    <%=t "aboutText", about: master.about %><br />
+                      <%=t "aboutText", about: master.about %><br />
                     <%end%>
                     <%= t "email" %>: <%= master.email%><br />
                     <%if master.phone_numb%>
-                    <%= t "pNum"%>: <%= master.phone_numb %> <br />
+                      <%= t "pNum"%>: <%= master.phone_numb %> <br />
                     <%end%>
                     <%if master.work_exp!= nil%>
-                    <%= t "workExp", exp: master.work_exp %><br />
+                      <%= t "workExp", exp: master.work_exp %><br />
                     <%end%>
                     <% if master.comments.count != 1 && (master.comments.count % 10) != 1  %>
                       <%= t "commCount", commC: master.comments.count %>
@@ -30,16 +31,11 @@
                     <% else %>
                       <%= t "1comm", commC: master.comments.count %>
                     <% end %>
-                   <%# This master has <%= master.comments.count %> <%#> reviews from our customers. #%>
+                   
                 </div>
             </div>
         </div>
     <% end %>    
-
-    <%# end %> <%# if  if u want to make "about" section to links%>
     <% end %>
     <% end %>
-    <%# else %>
-   <%# <p> please log in</p>
-    <%#end%> <%#"http://localhost:3000/users/#{master.id}"%>
 </div>

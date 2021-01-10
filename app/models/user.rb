@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   has_many :comments, dependent: :destroy
-  #has_many :leaved_user_comments, class_name: 'Comment', foreign_key: 'leaved_user_id'
-  #has_many :belongs_user_comments, class_name: 'Comment', foreign_key: 'belongs_user_id'
+  # has_many :leaved_user_comments, class_name: 'Comment', foreign_key: 'leaved_user_id'
+  # has_many :belongs_user_comments, class_name: 'Comment', foreign_key: 'belongs_user_id'
 
   after_commit :add_default_avatar, on: %i[create]
 
@@ -19,10 +19,6 @@ class User < ApplicationRecord
   end
 
   private
-
-  #  def work_since
-  #    Date.today.year - work_exp
-  #  end
 
   def add_default_avatar
     avatar.attach(

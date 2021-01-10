@@ -7,77 +7,42 @@
          <%= @master.last_name %></h4> <br />
          
         
-         <%if @master.about != nil%>
-         <%=t "aboutText", about: @master.about %><br />
-         <%end%>
+          <%if @master.about != nil%>
+            <%=t "aboutText", about: @master.about %><br />
+          <%end%>
           <%= t "email" %>: <%= @master.email%><br />
           <%if @master.phone_numb%>
-          <%= t "pNum"%>: <%= @master.phone_numb %> <br />
+            <%= t "pNum"%>: <%= @master.phone_numb %> <br />
           <%end%>
           <%if @master.work_exp!= nil%>
-           <%= t "workExp", exp: @master.work_exp %><br />
+            <%= t "workExp", exp: @master.work_exp %><br />
          <%end%>
          
          
 
 
      </div>
-     <%#= render 'comments/form' %>
-
+     
  </div>
 </div>
 
          
 <% if current_user && current_user.role == "customer" %>
-     <%= form_with model: [@user, @comment] do |f| %>
-     <%= f.label t "feedback" %> <br />
-      <%= f.text_area :body , class: "form-control text-area"%><br />
-      <%= f.submit t("postFeedback"), class: "btn btn-secondary" %>
-     <% end %><br />
+  <%= form_with model: [@user, @comment] do |f| %>
+    <%= f.label t "feedback" %> <br />
+    <%= f.text_area :body , class: "form-control text-area"%><br />
+    <%= f.submit t("postFeedback"), class: "btn btn-secondary" %>
+  <% end %><br />
 <% else %>
-<%= t("signinPls_html") %>
+  <%= t("signinPls_html") %>
 <% end %>
 
 
-<%#><%if @master.comments.count != 0%>
 <div id="comment-block">
   <p><%= t "reviews"%></p>
   <div id="show-comment">
-
     <% @comments.each do |comment| %>
-<%#>  <%= comment.leaved_user.first_name %>
-<%#>  <%= comment.leaved_user.last_name %>
-<%#>  <%= comment.body %>
-     <%= render 'comments/comment', comment: comment %>
-
-
-     <% end %>
+      <%= render 'comments/comment', comment: comment %>
+    <% end %>
   </div>
 </div>
-<%#><%else%>
-<%#><h3>There is no comments yeat</h3>
-<%#><%end%>
-
-
-
-
-
-
- <%#= form_with url: 'comments#create',method: :post, local: true do |f|%>
-
-<%# <%= form_with model: [@master, @comment] do |f|%>
-<%# <%= f.label :title, 'Title'%><br />
-<%# <%= f.text_field :title%><br />
-<%# <%= f.label :body, 'Body'%><br />
-<%# <%= f.text_area :body%><br />
-<%# <%= f.submit 'Post your comment'%>
-
-<%# <%@comments.each do |comm|%>
-<%#    <%= comm.created_at.strftime("%I:%M %p")%>
-<%#    <%= comm.leaved_user.email%>
-<%#    <%= comm.body%>
-<%#    <%= @comment.current_user.lastnaem%><%# <%= @comment.current_user.first_name%>
-<%# <%end%> 
- 
-
- <%#<% end %>
